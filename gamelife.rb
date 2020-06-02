@@ -57,7 +57,7 @@ class Tablero
 		end
 	end
 end
-
+ 
 
 myTablero = Tablero.new(80,24)
 
