@@ -28,6 +28,7 @@ class Tablero
 	def execGame
 		maxX = @width-1
 		maxY = @height-1
+		tablero = Array.new(@width) { Array.new(@height) { nil  }  }
 		(0..maxX).each do |i|
 			(0..maxY).each do |j|
 				flag = 0
@@ -71,19 +72,19 @@ class Tablero
 						flag = flag+1
 					end	
 				end
-				print flag
 				if ((flag==2) || (flag==3)) && (@tablero[i][j])
-					@tablero[i][j] = 1
+					tablero[i][j] = 1
 				else
-					@tablero[i][j] = nil
+					tablero[i][j] = nil
 				end
 
 				if (!@tablero[i][j]) && (flag==3)
-					@tablero[i][j] = 1
+					tablero[i][j] = 1
 				end
 
 			end
 		end
+		@tablero = tablero.clone
 	end
 end
  
